@@ -87,6 +87,30 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       });
     });
+
+  const autoridadSection = document.getElementById("autoridad");
+  const autoridadImage = document.querySelector("[data-autoridad-image]");
+
+  if (
+    autoridadSection &&
+    autoridadImage &&
+    "IntersectionObserver" in window
+  ) {
+    const autoridadObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            autoridadImage.classList.add("grayscale-0");
+          } else {
+            autoridadImage.classList.remove("grayscale-0");
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    autoridadObserver.observe(autoridadSection);
+  }
 });
 
 window.toggleCollapse = toggleCollapse;

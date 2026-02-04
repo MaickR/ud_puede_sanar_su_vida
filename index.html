@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundo Holístico - Retiro Usted Puede Sanar Su Vida - Mount Shasta</title>
-    <meta name="description" content="Retiro presencial en Mount Shasta basado en la filosofía de Louise Hay. Sana tu Salud, Amor y Dinero. Agosto 7-9, 2026.">
+    <meta name="description" content="Retiro presencial en Mount Shasta basado en la filosofía de Louise Hay. Sana tu Salud, Amor y Dinero. Agosto 7-9, 2026. Cupos limitados con garantía de transformación profunda.">
+    <meta name="keywords" content="retiro sanacion louise hay mount shasta, hipnoterapia transformacion, salud amor dinero">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta property="og:title" content="Usted Puede Sanar Su Vida - Retiro en Mount Shasta">
+    <meta property="og:description" content="Retiro de 3 días basado en Louise Hay. Sana tu Salud, Amor y Dinero. Cupos limitados.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="author" content="Isabela Tena - Mundo Holístico USA">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo-Mundoholistico.png">
+    <link rel="apple-touch-icon" href="assets/images/logo-Mundoholistico.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +67,37 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
+        .urgency-banner {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 45;
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .button-pulse:hover {
+            animation: buttonPulse 0.6s ease-out;
+        }
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 0 0 0 rgba(6, 78, 59, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(6, 78, 59, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(6, 78, 59, 0); }
+        }
+        #privacy-modal .privacy-content,
+        #privacy-modal .privacy-content * {
+            color: #000 !important;
+        }
     </style>
 </head>
 <body class="antialiased overflow-x-hidden text-primary">
@@ -66,7 +108,7 @@
             <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-3">
-                    <div class="bg-primary text-white p-2 rounded-full h-10 w-10 flex items-center justify-center font-display font-bold">MH</div>
+                    <img src="assets/images/logo-Mundoholistico.png" alt="Mundo Holístico USA" class="h-12 md:h-14 w-auto object-contain">
                     <div class="leading-tight">
                         <span class="block font-display font-bold text-lg md:text-xl text-primary tracking-wide">Mundo</span>
                         <span class="block font-display text-xs md:text-sm text-primary/80 uppercase tracking-widest">Holístico USA</span>
@@ -74,33 +116,37 @@
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#autoridad" class="text-primary font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide">El Legado</a>
-                    <a href="#experiencia" class="text-primary font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide">Experiencia</a>
-                    <a href="#guia" class="text-primary font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide">Tu Guía</a>
-                    <a href="#logistica" class="text-primary font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide">Logística</a>
-                    <a href="#inversion" class="text-primary font-medium hover:text-accent transition-colors text-sm uppercase tracking-wide">Inversión</a>
+                <div class="hidden lg:flex items-center space-x-4 xl:space-x-6">
+                    <a href="#autoridad" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">El Legado</a>
+                    <a href="#experiencia" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">Experiencia</a>
+                    <a href="#para-ti" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">¿Para Ti?</a>
+                    <a href="#guia" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">Tu Guía</a>
+                    <a href="#itinerario" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">Itinerario</a>
+                    <a href="#logistica" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">Logística</a>
+                    <a href="#inversion" class="text-primary font-medium hover:text-accent transition-colors text-xs xl:text-sm uppercase tracking-wide whitespace-nowrap">Inversión</a>
                 </div>
 
                 <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <a href="#inversion" class="bg-contrast text-white px-6 py-2.5 rounded-sm font-medium hover:bg-emerald-800 hover:scale-105 transition-all shadow-lg hover:shadow-emerald-900/20 uppercase text-xs tracking-widest">
+                <div class="hidden lg:block flex-shrink-0">
+                    <a href="#inversion" class="bg-contrast text-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-sm font-medium hover:bg-emerald-800 hover:scale-105 transition-all shadow-lg hover:shadow-emerald-900/20 uppercase text-[10px] xl:text-xs tracking-wider xl:tracking-widest whitespace-nowrap">
                         Reservar Cupo
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-primary" id="mobile-menu-btn">
+                <button class="lg:hidden text-primary" id="mobile-menu-btn">
                     <i data-lucide="menu" class="h-8 w-8"></i>
                 </button>
             </div>
             
             <!-- Mobile Menu -->
-            <div class="md:hidden hidden pt-4 pb-4 animate-fade-in-down bg-stone-50" id="mobile-menu">
+            <div class="lg:hidden hidden pt-4 pb-4 animate-fade-in-down bg-stone-50" id="mobile-menu">
                 <div class="flex flex-col space-y-4 text-center px-4">
                     <a href="#autoridad" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">El Legado</a>
                     <a href="#experiencia" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">Experiencia</a>
+                    <a href="#para-ti" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">¿Para Ti?</a>
                     <a href="#guia" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">Tu Guía</a>
+                    <a href="#itinerario" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">Itinerario</a>
                     <a href="#logistica" class="text-primary font-medium hover:text-accent py-2 border-b border-gray-100">Logística</a>
                     <a href="#inversion" class="bg-contrast text-white px-6 py-3 rounded-md font-medium mx-auto inline-block w-full mt-2">
                         Reservar Cupo
@@ -148,7 +194,7 @@
             <div class="flex flex-col lg:flex-row items-center gap-16 mb-24">
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <div class="relative">
-                        <img src="assets/images/isa-louise.png" alt="Mujer plena sanando" class="rounded-lg shadow-2xl object-cover h-[500px] w-full grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="assets/images/isa-louise.png" alt="Mujer plena sanando" data-auto-hover class="rounded-lg shadow-2xl object-contain w-full max-h-[600px] grayscale hover:grayscale-0 transition-all duration-700">
                         <div class="absolute -bottom-10 -right-4 lg:-right-10 bg-white p-6 rounded-lg shadow-xl max-w-xs hidden md:block border-l-4 border-accent">
                             <p class="font-display italic text-primary text-lg">"Los pensamientos enferman al cuerpo y definen tu realidad."</p>
                             <p class="text-right text-xs uppercase tracking-widest mt-2 font-bold">— Louise L. Hay</p>
@@ -176,7 +222,7 @@
                     <div class="md:w-1/3 text-center">
                         <img src="assets/images/true-love.jpg" alt="Jennifer Lopez" class="w-32 h-32 rounded-full border-4 border-accent object-cover mx-auto shadow-lg">
                         <p class="text-white font-display font-bold mt-4 text-xl">Jennifer Lopez</p>
-                        <span class="text-gray-400 text-xs uppercase tracking-widest">Artista Global</span>
+                        <span class="text-white text-xs uppercase tracking-widest">Artista Global</span>
                     </div>
                     <div class="md:w-2/3 border-l-0 md:border-l border-white/20 md:pl-10">
                         <i data-lucide="quote" class="text-accent h-10 w-10 mb-4 opacity-50"></i>
@@ -209,7 +255,7 @@
                         <i data-lucide="heart-pulse" class="h-10 w-10"></i>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-primary mb-4">Salud</h3>
-                    <p class="text-gray-700 leading-relaxed font-normal text-sm">
+                    <p class="text-black leading-relaxed font-normal text-sm">
                         Sin energía vital no hay creatividad. Tratamos síntomas que no ceden, fatiga crónica y el estrés que tu cuerpo grita por gestionar.
                     </p>
                 </div>
@@ -218,7 +264,7 @@
                         <i data-lucide="users" class="h-10 w-10"></i>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-primary mb-4">Amor</h3>
-                    <p class="text-gray-700 leading-relaxed font-normal text-sm">
+                    <p class="text-black leading-relaxed font-normal text-sm">
                         Relaciones tóxicas y falta de merecimiento. Si tus dinámicas infantiles no sanan, vivirás en un caos afectivo que bloquea tu paz.
                     </p>
                 </div>
@@ -227,12 +273,286 @@
                         <i data-lucide="coins" class="h-10 w-10"></i>
                     </div>
                     <h3 class="text-2xl font-display font-bold text-primary mb-4">Dinero</h3>
-                    <p class="text-gray-700 leading-relaxed font-normal text-sm">
+                    <p class="text-black leading-relaxed font-normal text-sm">
                         Deudas recurrentes y estancamiento. El dinero es una energía que responde a tu orden interno. Sana tus raíces para que florezcan tus frutos.
                     </p>
                 </div>
             </div>
             
+            <div class="mt-16 text-center" data-aos="fade-in">
+                <p class="text-xl font-display italic text-primary/80">"Es momento de romper el ciclo generacional desde el vientre hasta hoy."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: SECCIÓN "LO QUE NO VAMOS A HACER" -->
+    <section class="py-24 bg-white relative overflow-hidden" id="lo-que-no">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-contrast font-bold tracking-widest uppercase text-xs mb-3 block">Diferenciadores Claros</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Lo Que NO Vamos a Hacer</h2>
+                    <p class="text-lg text-gray-600 font-light">Aquí está la diferencia. Sabemos exactamente qué NO queremos para proteger la experiencia de transformación.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-red-50 to-pink-50 p-8 rounded-xl border-l-4 border-red-400" data-aos="fade-right">
+                        <h3 class="text-xl font-display font-bold text-primary mb-4 flex items-center gap-3">
+                            <i data-lucide="x" class="text-red-500 h-6 w-6"></i>
+                            No Auto-Ayuda Genérica
+                        </h3>
+                        <p class="text-black font-light mb-3">
+                            Muchos retiros prometen cambios superficiales. Nosotros vamos a la raíz.
+                        </p>
+                        <p class="text-sm text-primary font-bold border-t border-red-200 pt-3">✓ Haremos: Trabajo vivencial profundo en los 3 pilares (Salud, Amor, Dinero)</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl border-l-4 border-blue-400" data-aos="fade-left">
+                        <h3 class="text-xl font-display font-bold text-primary mb-4 flex items-center gap-3">
+                            <i data-lucide="x" class="text-blue-500 h-6 w-6"></i>
+                            No Imposición de Creencias
+                        </h3>
+                        <p class="text-black font-light mb-3">
+                            Tu fe, tus límites son respetados. Aquí no hay presión espiritual.
+                        </p>
+                        <p class="text-sm text-primary font-bold border-t border-blue-200 pt-3">✓ Haremos: Técnicas consensuadas de hipnoterapia y sanación emocional</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl border-l-4 border-purple-400" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="text-xl font-display font-bold text-primary mb-4 flex items-center gap-3">
+                            <i data-lucide="x" class="text-purple-500 h-6 w-6"></i>
+                            No Rituales "Fuera de Tu Fe"
+                        </h3>
+                        <p class="text-black font-light mb-3">
+                            Ciencia ancestral + moderna integrada. Nada que te haga incómoda.
+                        </p>
+                        <p class="text-sm text-primary font-bold border-t border-purple-200 pt-3">✓ Haremos: Meditación, breathwork y reprogramación subconsciente basada en Louise Hay</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl border-l-4 border-emerald-500" data-aos="fade-left" data-aos-delay="100">
+                        <h3 class="text-xl font-display font-bold text-primary mb-4 flex items-center gap-3">
+                            <i data-lucide="x" class="text-emerald-600 h-6 w-6"></i>
+                            No Compromisos "Espirituales"
+                        </h3>
+                        <p class="text-black font-light mb-3">
+                            Tú eres libre. Todo lo aprendido es TUYO para aplicar como desees.
+                        </p>
+                        <p class="text-sm text-primary font-bold border-t border-emerald-300 pt-3">✓ Haremos: Darte herramientas para usar de por vida sin obligaciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: SECCIÓN "ESTO ES PARA TI SI..." -->
+    <section class="py-24 bg-stone-50" id="para-ti">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">¿Esto Es Para Ti?</h2>
+                    <p class="text-lg text-gray-600 font-light">Ayúdate a autoseleccionarte. Este retiro requiere intención real.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- SÍ -->
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-display font-bold text-emerald-700 mb-8 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="check-circle" class="text-emerald-600 h-6 w-6"></i>
+                            </div>
+                            SÍ ES PARA TI SI...
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4 items-start">
+                                <span class="text-emerald-500 font-bold text-2xl">✓</span>
+                                <p class="text-black font-light"><strong>Ya "empujaste" demasiado</strong> y sientes que tu cuerpo grita pidiendo descanso verdadero</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-emerald-500 font-bold text-2xl">✓</span>
+                                <p class="text-black font-light"><strong>Sientes síntomas sin razón médica:</strong> fatiga, estrés, ansiedad que no ceden</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-emerald-500 font-bold text-2xl">✓</span>
+                                <p class="text-black font-light"><strong>Dinero y relaciones</strong> siguen patrones que NO puedes romper solo</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-emerald-500 font-bold text-2xl">✓</span>
+                                <p class="text-black font-light"><strong>Crees en la conexión mente-cuerpo-emoción</strong> pero necesitas herramientas prácticas</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-emerald-500 font-bold text-2xl">✓</span>
+                                <p class="text-black font-light"><strong>Estás lista para invertir</strong> en ti misma de verdad, no solo en un fin de semana</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- NO -->
+                    <div data-aos="fade-left">
+                        <h3 class="text-2xl font-display font-bold text-red-600 mb-8 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <i data-lucide="x-circle" class="text-red-600 h-6 w-6"></i>
+                            </div>
+                            NO ES PARA TI SI...
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4 items-start opacity-75">
+                                <span class="text-red-400 font-bold text-2xl">✗</span>
+                                <p class="text-gray-600 font-light"><strong>Buscas "magia" o cambios instantáneos</strong> sin tu participación activa</p>
+                            </li>
+                            <li class="flex gap-4 items-start opacity-75">
+                                <span class="text-red-400 font-bold text-2xl">✗</span>
+                                <p class="text-gray-600 font-light"><strong>Necesitas un terapeuta médico</strong> para condiciones psiquiátricas diagnosticadas</p>
+                            </li>
+                            <li class="flex gap-4 items-start opacity-75">
+                                <span class="text-red-400 font-bold text-2xl">✗</span>
+                                <p class="text-gray-600 font-light"><strong>No crees en el trabajo emocional</strong> o estás aquí por otra persona</p>
+                            </li>
+                            <li class="flex gap-4 items-start opacity-75">
+                                <span class="text-red-400 font-bold text-2xl">✗</span>
+                                <p class="text-gray-600 font-light"><strong>Esperas soluciones rápidas:</strong> este retiro es inmersión de 3 días, luego viene TU trabajo</p>
+                            </li>
+                            <li class="flex gap-4 items-start opacity-75">
+                                <span class="text-red-400 font-bold text-2xl">✗</span>
+                                <p class="text-gray-600 font-light"><strong>No puedes comprometerte financiera y emocionalmente</strong> con el proceso</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: CARTA/MANIFIESTO DE ISABELA -->
+    <section class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('https://www.transparenttextures.com/patterns/paper.png')"></div>
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="text-accent font-bold tracking-widest uppercase text-xs mb-3 block">Palabra de Isabela</span>
+                <h2 class="text-4xl md:text-5xl font-display font-light italic text-white mb-4">Un Mensaje Para Ti</h2>
+            </div>
+
+            <div class="bg-white/5 p-10 md:p-16 rounded-lg border border-white/20 backdrop-blur-sm" data-aos="fade-in">
+                <p class="text-lg font-light leading-relaxed mb-6 text-gray-100">
+                    <span class="text-2xl text-accent font-serif">❝</span> Sé exactamente cómo te sientes. Durante años, "empujé" demasiado. Trabajaba sin parar, controlaba cada aspecto de mi vida, y me preguntaba por qué el dinero y el amor seguían siendo desafíos.
+                </p>
+                <p class="text-lg font-light leading-relaxed mb-6 text-gray-100">
+                    Descubrí lo que Louise Hay comprendió: <strong>nuestros pensamientos crean nuestras emociones, y nuestras emociones cuerean nuestros resultados.</strong> Cambié un pensamiento, y cambió mi vida.
+                </p>
+                <p class="text-lg font-light leading-relaxed mb-6 text-gray-100">
+                    Este retiro no es un viaje más. <strong>Es el momento donde te permites a ti misma parar, mirar adentro, y reconstruir desde la raíz.</strong> Te prometo que no encontrarás respuestas falsas aquí. Solo herramientas reales, comprobadas, y un espacio donde tu sanación es la prioridad.
+                </p>
+                <p class="text-lg font-light leading-relaxed text-accent italic">
+                    "Tú también puedes sanar tu vida. Yo soy prueba de ello."
+                    <br>
+                    <span class="text-white font-bold text-lg mt-4 block">— Isabela Tena</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: ITINERARIO HORA A HORA -->
+    <section class="py-24 bg-white" id="itinerario">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-contrast font-bold tracking-widest uppercase text-xs mb-3 block">Tu Viaje de Transformación</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Itinerario del Retiro</h2>
+                    <p class="text-lg text-gray-600 font-light">Paso a paso, tu transformación comienza</p>
+                </div>
+
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent via-contrast to-emerald-600"></div>
+
+                    <!-- Day 1 -->
+                    <div class="mb-12 md:mb-20" data-aos="fade-up">
+                        <div class="md:flex gap-12">
+                            <div class="md:w-1/2 md:text-right md:pr-8">
+                                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl border border-amber-200">
+                                    <h3 class="text-2xl font-display font-bold text-primary mb-4">DÍA 1: Viernes 7 de Agosto</h3>
+                                    <h4 class="text-amber-700 font-bold mb-4">"Sanación de tu Linaje"</h4>
+                                    <div class="space-y-3 text-sm text-black text-left md:text-right font-light">
+                                        <p><strong>7:00 AM:</strong> Recepción en Lago Corazón + Desayuno</p>
+                                        <p><strong>8:30 AM:</strong> Meditación de bienvenida al vórtice energético</p>
+                                        <p><strong>10:00 AM:</strong> Presentación y círculo de intención</p>
+                                        <p><strong>11:30 AM:</strong> Punto de Poder #1: Reconocer tu Linaje</p>
+                                        <p><strong>1:00 PM:</strong> Pausa y almuerzo</p>
+                                        <p><strong>2:30 PM:</strong> Fogata Sagrada - Transmutar creencias heredadas</p>
+                                        <p><strong>5:00 PM:</strong> Tiempo libre y descanso</p>
+                                        <p><strong>7:00 PM:</strong> Cena y círculo de mujeres informal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+                                <div class="w-16 h-16 bg-amber-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-display font-bold text-2xl">
+                                    1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="mb-12 md:mb-20" data-aos="fade-up">
+                        <div class="md:flex gap-12 flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-8">
+                                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-xl border border-emerald-200">
+                                    <h3 class="text-2xl font-display font-bold text-primary mb-4">DÍA 2: Sábado 8 de Agosto</h3>
+                                    <h4 class="text-emerald-700 font-bold mb-4">"Conexión con la Abundancia"</h4>
+                                    <div class="space-y-3 text-sm text-black text-left font-light">
+                                        <p><strong>7:00 AM:</strong> Despertar con meditación al amanecer</p>
+                                        <p><strong>8:00 AM:</strong> Desayuno y Breathwork profundo</p>
+                                        <p><strong>9:30 AM:</strong> Punto de Poder #2: El Dinero es Energía</p>
+                                        <p><strong>11:00 AM:</strong> Reprogramación del Agua - Trabajo con afirmaciones</p>
+                                        <p><strong>1:00 PM:</strong> Almuerzo y contemplación</p>
+                                        <p><strong>3:00 PM:</strong> Sesión privada de hipnoterapia (grupos pequeños)</p>
+                                        <p><strong>5:00 PM:</strong> Lluvia de Perseidas - Observación astronómica</p>
+                                        <p><strong>7:00 PM:</strong> Cena bajo las estrellas</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+                                <div class="w-16 h-16 bg-emerald-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-display font-bold text-2xl">
+                                    2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="mb-0 md:mb-0" data-aos="fade-up">
+                        <div class="md:flex gap-12">
+                            <div class="md:w-1/2 md:text-right md:pr-8">
+                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-200">
+                                    <h3 class="text-2xl font-display font-bold text-primary mb-4">DÍA 3: Domingo 9 de Agosto</h3>
+                                    <h4 class="text-blue-700 font-bold mb-4">"Integración y Compromiso Contigo"</h4>
+                                    <div class="space-y-3 text-sm text-black text-left md:text-right font-light">
+                                        <p><strong>7:00 AM:</strong> Meditación de clausura</p>
+                                        <p><strong>8:00 AM:</strong> Desayuno final</p>
+                                        <p><strong>9:00 AM:</strong> Punto de Poder #3: Tu Palabra de Poder Personal</p>
+                                        <p><strong>10:30 AM:</strong> Círculo de Agradecimiento y Despedida</p>
+                                        <p><strong>12:00 PM:</strong> Conclusión y abrazos finales</p>
+                                        <p><strong>12:30 PM:</strong> Transporte al aeropuerto (opcional)</p>
+                                    </div>
+                                    <p class="mt-6 text-sm text-primary font-bold bg-blue-100 p-3 rounded">
+                                        📱 Acceso a grupo de WhatsApp privado para seguimiento post-retiro
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex md:w-1/2 items-center justify-center">
+                                <div class="w-16 h-16 bg-blue-500 rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white font-display font-bold text-2xl">
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED SECTION: AHORA CON CTA ADICIONAL DESPUÉS DE TU GUÍA -->
+    <!-- (Antes fue aquí) -->
             <div class="mt-16 text-center" data-aos="fade-in">
                 <p class="text-xl font-display italic text-primary/80">"Es momento de romper el ciclo generacional desde el vientre hasta hoy."</p>
             </div>
@@ -283,15 +603,15 @@
             <div class="grid md:grid-cols-3 gap-8 border-t border-white/10 pt-12">
                 <div class="flex items-start gap-4">
                     <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center shrink-0"><i data-lucide="flame" class="text-accent h-6 w-6"></i></div>
-                    <div><h4 class="font-bold font-display text-lg mb-2">Fogatas Sagradas</h4><p class="text-sm text-gray-400">Terapia con el fuego sagrado para transmutar lo viejo.</p></div>
+                    <div><h4 class="font-bold font-display text-lg mb-2">Fogatas Sagradas</h4><p class="text-sm text-white">Terapia con el fuego sagrado para transmutar lo viejo.</p></div>
                 </div>
                 <div class="flex items-start gap-4">
                     <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0"><i data-lucide="droplets" class="text-blue-400 h-6 w-6"></i></div>
-                    <div><h4 class="font-bold font-display text-lg mb-2">Reprogramación del Agua</h4><p class="text-sm text-gray-400">Trabajo energético con la pureza de los manantiales.</p></div>
+                    <div><h4 class="font-bold font-display text-lg mb-2">Reprogramación del Agua</h4><p class="text-sm text-white">Trabajo energético con la pureza de los manantiales.</p></div>
                 </div>
                 <div class="flex items-start gap-4">
                     <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="text-purple-400 h-6 w-6"></i></div>
-                    <div><h4 class="font-bold font-display text-lg mb-2">Afirmaciones de Poder</h4><p class="text-sm text-gray-400">Aprende a crear decretos personalizados que funcionan.</p></div>
+                    <div><h4 class="font-bold font-display text-lg mb-2">Afirmaciones de Poder</h4><p class="text-sm text-white">Aprende a crear decretos personalizados que funcionan.</p></div>
                 </div>
             </div>
         </div>
@@ -329,7 +649,23 @@
         </div>
     </section>
 
-    <!-- UPDATED: LOGÍSTICA DE VIAJE (Airports + Hotel Details) -->
+    <!-- CTA SECTION AFTER GUIDE -->
+    <section class="py-16 bg-gradient-to-r from-primary via-primary to-indigo-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-white md:w-2/3">
+                    <h3 class="text-3xl font-display font-bold mb-3">¿Ya Sientes que Es Hora?</h3>
+                    <p class="text-gray-200 font-light">Nuestras plazas son limitadas y se asignan por orden de inscripción. Tu transformación te espera en Mount Shasta.</p>
+                </div>
+                <a href="#inversion" class="button-pulse bg-accent text-white px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-widest hover:bg-amber-700 transition-all shadow-2xl transform hover:scale-105 whitespace-nowrap">
+                    Quiero Sanar Mi Vida
+                </a>
+            </div>
+        </div>
+    </section>
     <section class="py-24 bg-stone-50" id="logistica">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-display font-bold text-primary text-center mb-16">Logística de Viaje</h2>
@@ -342,7 +678,7 @@
                     <p class="text-sm text-gray-500 uppercase tracking-widest mb-4">Oregón</p>
                     <div class="bg-stone-100 rounded-lg p-3 inline-block">
                         <span class="block text-2xl font-display font-bold text-accent">1h 20m</span>
-                        <span class="text-xs text-gray-400">En auto rentado</span>
+                        <span class="text-xs text-black">En auto rentado</span>
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200 text-center hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 transform" data-aos="fade-up" data-aos-delay="200">
@@ -351,7 +687,7 @@
                     <p class="text-sm text-gray-500 uppercase tracking-widest mb-4">California</p>
                     <div class="bg-stone-100 rounded-lg p-3 inline-block">
                         <span class="block text-2xl font-display font-bold text-accent">3h 30m</span>
-                        <span class="text-xs text-gray-400">En auto rentado</span>
+                        <span class="text-xs text-black">En auto rentado</span>
                     </div>
                 </div>
                 <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200 text-center hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 transform" data-aos="fade-up" data-aos-delay="300">
@@ -360,7 +696,7 @@
                     <p class="text-sm text-gray-500 uppercase tracking-widest mb-4">California</p>
                     <div class="bg-stone-100 rounded-lg p-3 inline-block">
                         <span class="block text-2xl font-display font-bold text-accent">~5h</span>
-                        <span class="text-xs text-gray-400">En auto rentado</span>
+                        <span class="text-xs text-black">En auto rentado</span>
                     </div>
                 </div>
             </div>
@@ -387,7 +723,7 @@
                         <p class="text-sm text-gray-300 mb-4">
                             Evita hospedarte en pueblos aledaños como <strong>Weed, Dunsmuir o Yreka</strong>.
                         </p>
-                        <ul class="text-sm text-gray-400 space-y-2 list-disc pl-4">
+                        <ul class="text-sm text-white space-y-2 list-disc pl-4">
                             <li>El evento es rumbo al Lago Corazón (20 min del centro).</li>
                             <li>Si te hospedas lejos, sumarás horas de manejo innecesarias cada día.</li>
                         </ul>
@@ -407,23 +743,23 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-contrast h-5 w-5 shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 font-medium">Los 9 puntos de poder de Louise Hay</span>
+                            <span class="text-black font-medium">Los 9 puntos de poder de Louise Hay</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-contrast h-5 w-5 shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 font-medium">Sanación de los 3 pilares (Salud, Amor, Dinero)</span>
+                            <span class="text-black font-medium">Sanación de los 3 pilares (Salud, Amor, Dinero)</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-contrast h-5 w-5 shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 font-medium">Meditaciones guiadas y audios (MP4)</span>
+                            <span class="text-black font-medium">Meditaciones guiadas y audios (MP4)</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-contrast h-5 w-5 shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 font-medium">Material impreso y Snacks/Coffee break</span>
+                            <span class="text-black font-medium">Material impreso y Snacks/Coffee break</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-contrast h-5 w-5 shrink-0 mt-0.5"></i>
-                            <span class="text-gray-700 font-medium">Opción de Camping ($35/noche con duchas)</span>
+                            <span class="text-black font-medium">Opción de Camping ($35/noche con duchas)</span>
                         </li>
                     </ul>
                 </div>
@@ -464,6 +800,12 @@
     <!-- 7. INVERSIÓN Y CHECKOUT -->
     <section class="py-24 bg-gradient-to-b from-stone-100 to-white" id="inversion">
         <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <div class="urgency-banner inline-block text-white px-6 py-3 rounded-full mb-8 text-sm font-bold tracking-widest uppercase">
+                    ⏰ Cupos Limitados a 12 Participantes - Selección por Orden de Inscripción
+                </div>
+            </div>
+
             <div class="text-center mb-16">
                 <span class="text-contrast font-bold tracking-widest uppercase text-xs mb-3 block">El Paso Decisivo</span>
                 <h2 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">Inversión para tu Alma</h2>
@@ -474,7 +816,7 @@
                     <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 relative z-10">
                         <div class="bg-primary p-10 text-center">
                             <h3 class="text-white font-display text-3xl font-bold">Entrada General</h3>
-                            <p class="text-primary-100 text-sm mt-2">Acceso Completo al Retiro</p>
+                            <p class="text-white text-sm mt-2">Acceso Completo al Retiro</p>
                         </div>
                         <div class="p-8 md:p-12">
                             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10 pb-10 border-b border-gray-100">
@@ -492,15 +834,15 @@
                             <div class="space-y-4 mb-10 flex flex-col items-center">
                                 <div class="flex items-center gap-3 w-full md:w-auto justify-start">
                                     <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="text-emerald-700 h-3 w-3"></i></div>
-                                    <span class="text-gray-700 font-medium">Acceso a los 3 días del retiro</span>
+                                    <span class="text-black font-medium">Acceso a los 3 días del retiro</span>
                                 </div>
                                 <div class="flex items-center gap-3 w-full md:w-auto justify-start">
                                     <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="text-emerald-700 h-3 w-3"></i></div>
-                                    <span class="text-gray-700 font-medium">Kit de bienvenida y materiales</span>
+                                    <span class="text-black font-medium">Kit de bienvenida y materiales</span>
                                 </div>
                                 <div class="flex items-center gap-3 w-full md:w-auto justify-start">
                                     <div class="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0"><i data-lucide="check" class="text-emerald-700 h-3 w-3"></i></div>
-                                    <span class="text-gray-700 font-medium">Reunión de Zoom previa (Junio)</span>
+                                    <span class="text-black font-medium">Reunión de Zoom previa (Junio)</span>
                                 </div>
                                 <div class="flex items-center gap-3 w-full md:w-auto justify-start opacity-60">
                                     <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center shrink-0"><i data-lucide="info" class="text-gray-500 h-3 w-3"></i></div>
@@ -508,7 +850,7 @@
                                 </div>
                             </div>
 
-                            <a href="#" class="block w-full bg-contrast text-white text-center py-5 rounded-lg font-bold text-lg uppercase tracking-wider hover:bg-emerald-800 hover:shadow-xl transition-all transform hover:scale-[1.02]">
+                            <a href="https://wa.me/14088009376?text=Hola%20Isabela%2C%20quiero%20reservar%20mi%20cupo%20para%20el%20retiro%20en%20Mount%20Shasta" target="_blank" class="block w-full bg-contrast text-white text-center py-5 rounded-lg font-bold text-lg uppercase tracking-wider hover:bg-emerald-800 hover:shadow-xl transition-all transform hover:scale-[1.02] button-pulse">
                                 Reservar Mi Lugar Ahora
                             </a>
                         </div>
@@ -580,59 +922,211 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-primary text-white py-16 border-t border-indigo-900">
+    <footer class="bg-primary text-white py-10 border-t border-indigo-900">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-4 mb-4">
-                        <div class="bg-white text-primary p-2 rounded-full h-12 w-12 flex items-center justify-center font-display font-bold text-xl">MH</div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4">
+                <div class="text-center md:text-left mx-auto md:mx-0">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-2 md:mb-0">
+                        <img src="assets/images/logo-Mundoholistico.png" alt="Mundo Holístico USA" class="h-10 md:h-12 w-auto object-contain">
                         <div>
-                            <span class="block font-display font-bold text-2xl tracking-wide">Mundo Holístico</span>
-                            <span class="block text-xs text-indigo-300 uppercase tracking-widest">USA</span>
+                            <span class="block font-display font-bold text-xl tracking-wide leading-tight">Mundo Holístico</span>
+                            <span class="block text-[10px] text-indigo-300 uppercase tracking-widest leading-none">USA</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="text-center md:text-right space-y-3">
-                    <h4 class="font-bold text-accent mb-4 uppercase text-xs tracking-widest">Contacto Directo</h4>
-                    <p class="text-gray-300 hover:text-white transition-colors group">
-                        <a href="mailto:mundoholisticousa@gmail.com" class="flex items-center gap-2 justify-center md:justify-end">
-                            <i data-lucide="mail" class="h-4 w-4 text-accent group-hover:text-white transition-colors"></i> 
+                <div class="text-center md:text-right space-y-2 mx-auto md:mx-0">
+                    <h4 class="font-bold text-accent mb-2 uppercase text-[10px] tracking-widest">Contacto Directo</h4>
+                    <div class="flex flex-col gap-1.5 md:items-end items-center">
+                        <a href="mailto:mundoholisticousa@gmail.com" class="text-gray-300 hover:text-white transition-colors group flex items-center gap-2 text-sm">
+                            <i data-lucide="mail" class="h-3.5 w-3.5 text-accent group-hover:text-white transition-colors"></i> 
                             mundoholisticousa@gmail.com
                         </a>
-                    </p>
-                    <p class="text-gray-300 hover:text-white transition-colors group">
-                        <a href="#" class="flex items-center gap-2 justify-center md:justify-end">
-                            <i data-lucide="message-circle" class="h-4 w-4 text-emerald-400 group-hover:text-white transition-colors"></i> 
-                            WhatsApp: +1 555-0123
+                        <a href="https://wa.me/14088009376?text=Hola%20Isabela%2C%20vengo%20de%20la%20web%20y%20tengo%20una%20duda%20sobre%20el%20retiro%20en%20Shasta" class="text-gray-300 hover:text-white transition-colors group flex items-center gap-2 text-sm" target="_blank">
+                            <i data-lucide="message-circle" class="h-3.5 w-3.5 text-emerald-400 group-hover:text-white transition-colors"></i> 
+                            WhatsApp: +1 (408) 800-9376
                         </a>
-                    </p>
+                    </div>
+                    
+                    <!-- Redes Sociales -->
+                    <div class="pt-2 flex flex-col md:flex-row items-center md:justify-end gap-3 md:gap-2">
+                        <span class="text-[10px] text-gray-500 uppercase tracking-widest md:mr-2">Síguenos:</span>
+                        <div class="flex gap-3">
+                            <a href="https://www.facebook.com/mundoholisticousa" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors" title="Facebook">
+                                <i data-lucide="facebook" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.instagram.com/mundoholisticousaoficial/" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors" title="Instagram">
+                                <i data-lucide="instagram" class="h-4 w-4"></i>
+                            </a>
+                            <a href="https://www.youtube.com/@Mundoholisticousa" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-white transition-colors" title="YouTube">
+                                <i data-lucide="youtube" class="h-4 w-4"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="border-t border-white/10 mt-14 pt-8 text-center text-xs text-gray-500">
-                <p class="mb-2">*** DESCARGO DE RESPONSABILIDAD ***</p>
-                <p class="max-w-2xl mx-auto leading-relaxed">
-                    Este programa no sustituye tratamientos médicos, psicológicos o psiquiátricos. Isabela Tena es facilitadora licenciada del método Louise Hay, no médico. Los resultados individuales pueden variar. Al inscribirte aceptas plena responsabilidad de tu proceso personal.
+            <div class="border-t border-white/10 mt-8 pt-6 text-center text-[10px] text-gray-500">
+                <p class="mb-1 uppercase tracking-wider font-semibold">*** Descargo de Responsabilidad ***</p>
+                <p class="max-w-3xl mx-auto leading-relaxed opacity-70 mb-3">
+                    Este programa no sustituye tratamientos médicos, psicológicos o psiquiátricos. Isabela Tena es facilitadora licenciada del método Louise Hay, no médico. 
                 </p>
-                <p class="mt-4">&copy; 2026 Mundo Holístico USA. Todos los derechos reservados.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 mt-2 border-t border-white/5 pt-3">
+                    <span>&copy; 2026 Mundo Holístico USA. Todos los derechos reservados.</span>
+                    <span class="hidden md:inline text-white/10">|</span>
+                    <button type="button" class="hover:text-gray-300 transition-colors" id="privacy-open" aria-haspopup="dialog" aria-controls="privacy-modal">Política de Privacidad</button>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- PRIVACY MODAL -->
+    <div id="privacy-modal" class="fixed inset-0 z-[60] hidden" inert>
+        <div class="absolute inset-0 bg-black/60" id="privacy-backdrop"></div>
+        <div class="relative w-full h-full flex items-center justify-center p-4">
+            <div class="bg-white max-w-3xl w-full rounded-xl shadow-2xl overflow-hidden">
+                <div class="flex items-center justify-between px-6 py-4 border-b border-stone-200 bg-white">
+                    <h3 class="font-display text-xl md:text-2xl text-black">Política de Privacidad</h3>
+                    <button type="button" class="text-gray-500 hover:text-black" id="privacy-close" aria-label="Cerrar">
+                        <i data-lucide="x" class="h-5 w-5"></i>
+                    </button>
+                </div>
+                <div class="privacy-content px-6 py-5 max-h-[70vh] overflow-y-auto text-sm md:text-base leading-relaxed space-y-5 bg-white text-black">
+                    <p class="text-xs uppercase tracking-widest text-black">Última actualización: <span id="privacy-date">Febrero 2026</span></p>
+                    <p>Bienvenido a la página web del retiro "Usted Puede Sanar Su Vida - Mount Shasta", operada por Mundo Holístico USA e Isabela Tena ("nosotros", "nuestro" o "la Compañía").</p>
+                    <p>Su privacidad es de suma importancia para nosotros. Esta Política de Privacidad explica cómo recopilamos, usamos, protegemos y divulgamos su información cuando visita nuestra Landing Page, se registra en nuestros eventos o se comunica con nosotros a través de WhatsApp o correo electrónico.</p>
+                    <p>Esta política está redactada para cumplir con las leyes federales de los Estados Unidos y específicamente con la Ley de Privacidad del Consumidor de California (CCPA) y la Ley de Derechos de Privacidad de California (CPRA).</p>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">1. INFORMACIÓN QUE RECOPILAMOS</h4>
+                        <p class="mb-2"><strong>A. Información que usted nos proporciona voluntariamente</strong></p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Identificadores personales: Nombre completo, dirección de correo electrónico, número de teléfono (para contacto vía WhatsApp o llamadas).</li>
+                            <li>Información de pago: Si realiza una reserva, nuestro procesador de pagos (como Stripe o PayPal) recopilará los datos de su tarjeta de crédito/débito. Nosotros NO almacenamos ni tenemos acceso a sus números de tarjeta completos.</li>
+                            <li>Información de comunicaciones: Mensajes que nos envíe a través de formularios de contacto, correos electrónicos o chats de WhatsApp.</li>
+                        </ul>
+                        <p class="mt-3 mb-2"><strong>B. Información recopilada automáticamente</strong></p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Datos de uso: Dirección IP, tipo de navegador, versión del navegador, las páginas que visita, la hora y fecha de su visita y el tiempo dedicado a esas páginas.</li>
+                            <li>Cookies y Tecnologías de Rastreo: Utilizamos cookies para mejorar la funcionalidad del sitio y analizar el tráfico (ej. Google Analytics) para entender mejor a nuestra audiencia.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">2. CÓMO USAMOS SU INFORMACIÓN</h4>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Procesar su reserva: Para gestionar su inscripción al retiro en Mount Shasta.</li>
+                            <li>Comunicación logística: Para enviarle detalles del evento, guías de preparación, ubicaciones exactas y actualizaciones.</li>
+                            <li>Atención al cliente: Para responder a sus preguntas vía WhatsApp o email.</li>
+                            <li>Marketing (con su consentimiento): Para enviarle información sobre futuros retiros, charlas de Isabela Tena o contenido de valor relacionado con Louise Hay. Puede darse de baja en cualquier momento.</li>
+                            <li>Cumplimiento legal: Para cumplir con obligaciones fiscales y legales en el estado de California.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">3. COMPARTIR INFORMACIÓN CON TERCEROS</h4>
+                        <p>No vendemos su información personal. Solo compartimos información con proveedores de servicios que nos ayudan a operar nuestro negocio, bajo estrictos acuerdos de confidencialidad:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Procesadores de Pago: (Ej: Stripe, PayPal, Zelle) para transacciones seguras.</li>
+                            <li>Plataformas de Email Marketing: Para el envío de correos electrónicos.</li>
+                            <li>Análisis Web: (Ej: Google Analytics) para mejorar la experiencia del usuario.</li>
+                            <li>Requisitos Legales: Si una autoridad judicial lo requiere por ley.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">4. DERECHOS DE PRIVACIDAD EN CALIFORNIA (CCPA / CPRA)</h4>
+                        <p>Si usted es residente de California, tiene derechos específicos sobre su información personal:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Derecho a Saber: Puede solicitar qué datos personales hemos recopilado sobre usted en los últimos 12 meses.</li>
+                            <li>Derecho a Eliminar: Puede solicitar que eliminemos su información personal de nuestros registros (sujeto a ciertas excepciones legales, como mantener registros de transacciones fiscales).</li>
+                            <li>Derecho a Corregir: Puede solicitar la corrección de datos inexactos.</li>
+                            <li>Derecho a la No Discriminación: No le discriminaremos por ejercer sus derechos de privacidad.</li>
+                            <li>Derecho a Optar por no participar (Opt-Out): Aunque no vendemos datos, usted tiene derecho a controlar cómo se comparten sus datos.</li>
+                        </ul>
+                        <p class="mt-2">Para ejercer cualquiera de estos derechos, contáctenos en: <a href="mailto:mundoholisticousa@gmail.com" class="text-accent underline">mundoholisticousa@gmail.com</a>.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">5. SEGURIDAD DE LOS DATOS</h4>
+                        <p>Implementamos medidas de seguridad técnicas y organizativas comercialmente razonables (como el uso de certificados SSL/HTTPS en esta web) para proteger su información personal. Sin embargo, recuerde que ningún método de transmisión por Internet es 100% seguro.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">6. EXENCIÓN DE RESPONSABILIDAD MÉDICA Y DE SALUD</h4>
+                        <p>Al interactuar con este sitio, usted entiende que los servicios ofrecidos (retiros, coaching, hipnoterapia) son de carácter educativo, holístico y espiritual. La información recopilada no constituye un historial médico protegido bajo HIPAA, a menos que se firme un acuerdo específico de confidencialidad terapeuta-paciente por separado fuera de esta página web. El retiro no sustituye tratamientos médicos o psiquiátricos profesionales.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">7. ENLACES A TERCEROS</h4>
+                        <p>Nuestra página puede contener enlaces a sitios externos (como redes sociales). No somos responsables de las prácticas de privacidad de esos sitios. Le recomendamos leer sus políticas de privacidad.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">8. PRIVACIDAD DE LOS MENORES</h4>
+                        <p>Nuestros servicios no están dirigidos a menores de 18 años. No recopilamos conscientemente información personal de menores.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">9. CAMBIOS A ESTA POLÍTICA</h4>
+                        <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos cualquier cambio publicando la nueva política en esta página y actualizando la fecha de "Última actualización".</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-black mb-2">10. CONTACTO</h4>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Entidad: Mundo Holístico USA / Isabela Tena</li>
+                            <li>Ubicación: Mount Shasta, California, 96067</li>
+                            <li>Correo Electrónico: <a href="mailto:mundoholisticousa@gmail.com" class="text-accent underline">mundoholisticousa@gmail.com</a></li>
+                            <li>Teléfono/WhatsApp: +1 (408) 800-9376</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="px-6 py-4 border-t border-stone-200 flex justify-end">
+                    <button type="button" class="bg-contrast text-white px-5 py-2 rounded-sm text-sm hover:bg-emerald-800 transition-colors" id="privacy-close-bottom">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/14088009376?text=Hola%20Isabela%2C%20vengo%20de%20la%20web%20y%20tengo%20una%20duda%20sobre%20el%20retiro%20en%20Shasta" target="_blank" class="whatsapp-float bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all group" title="Escribeme por WhatsApp">
+        <div class="relative">
+            <i data-lucide="message-circle" class="h-7 w-7 group-hover:scale-110 transition-transform"></i>
+            <span class="absolute top-0 right-0 w-3 h-3 bg-red-600 rounded-full animate-pulse"></span>
+        </div>
+        <div class="absolute bottom-16 right-0 bg-white text-primary px-4 py-2 rounded-lg shadow-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            ¡Hablemos! 📱
+        </div>
+    </a>
+
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+        // AOS Animation - Mejorado
+        AOS.init({ 
+            once: false, // Permite que se repita al hacer scroll
+            offset: 100,
+            duration: 1000, 
+            easing: 'ease-in-out-cubic',
+            delay: 0
+        });
+        
         lucide.createIcons();
         
+        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => { 
+                mobileMenu.classList.toggle('hidden'); 
+            });
+        }
 
+        // Sticky navbar con transparencia dinámica
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
+            if (window.scrollY > 100) {
                 navbar.classList.add('shadow-md', 'bg-stone-50/95', 'py-2');
                 navbar.classList.remove('bg-stone-50/90', 'py-4');
             } else {
@@ -640,6 +1134,89 @@
                 navbar.classList.add('bg-stone-50/90', 'py-4');
             }
         });
+
+        // Smooth scroll para links con hash
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mostrar WhatsApp flotante después de 10 segundos
+        setTimeout(() => {
+            const whatsappBtn = document.querySelector('.whatsapp-float');
+            if (whatsappBtn) {
+                whatsappBtn.style.display = 'block';
+            }
+        }, 10000);
+
+        // Activar efecto hover automático al entrar/salir de la sección
+        const autoHoverImages = document.querySelectorAll('[data-auto-hover]');
+        if (autoHoverImages.length > 0) {
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('grayscale-0');
+                        } else {
+                            entry.target.classList.remove('grayscale-0');
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                autoHoverImages.forEach((img) => observer.observe(img));
+            } else {
+                autoHoverImages.forEach((img) => img.classList.add('grayscale-0'));
+            }
+        }
+
+        // Modal Política de Privacidad
+        const privacyOpen = document.getElementById('privacy-open');
+        const privacyModal = document.getElementById('privacy-modal');
+        const privacyClose = document.getElementById('privacy-close');
+        const privacyCloseBottom = document.getElementById('privacy-close-bottom');
+        const privacyBackdrop = document.getElementById('privacy-backdrop');
+        const privacyDate = document.getElementById('privacy-date');
+        let lastFocusedElement = null;
+
+        const openPrivacy = () => {
+            if (!privacyModal) return;
+            lastFocusedElement = document.activeElement;
+            privacyModal.classList.remove('hidden');
+            privacyModal.removeAttribute('inert');
+            document.body.classList.add('overflow-hidden');
+            if (privacyClose) privacyClose.focus();
+        };
+
+        const closePrivacy = () => {
+            if (!privacyModal) return;
+            privacyModal.classList.add('hidden');
+            privacyModal.setAttribute('inert', '');
+            document.body.classList.remove('overflow-hidden');
+            if (lastFocusedElement && lastFocusedElement.focus) {
+                lastFocusedElement.focus();
+            }
+        };
+
+        if (privacyOpen) privacyOpen.addEventListener('click', openPrivacy);
+        if (privacyClose) privacyClose.addEventListener('click', closePrivacy);
+        if (privacyCloseBottom) privacyCloseBottom.addEventListener('click', closePrivacy);
+        if (privacyBackdrop) privacyBackdrop.addEventListener('click', closePrivacy);
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePrivacy();
+        });
+
+        if (privacyDate) {
+            const now = new Date();
+            const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+            privacyDate.textContent = `${meses[now.getMonth()]} ${now.getFullYear()}`;
+        }
     </script>
 </body>
 </html>
