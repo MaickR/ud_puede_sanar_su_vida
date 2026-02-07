@@ -1,0 +1,85 @@
+/* ========================================
+   ESTILOS PERSONALIZADOS - RETIRO MOUNT SHASTA
+   Isabela Owl - Mundo Holístico USA
+   ======================================== */
+
+/* Fuentes y Colores Base */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafaf9;
+  color: #1e1b4b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(30, 27, 75, 0.2), rgba(30, 27, 75, 0.7));
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Banner de Urgencia */
+.urgency-banner {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.8; 
+  }
+}
+
+/* Botón Flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 45;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(100px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+/* Efecto de Pulso en Botones */
+.button-pulse:hover {
+  animation: buttonPulse 0.6s ease-out;
+}
+
+@keyframes buttonPulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(6, 78, 59, 0.7); 
+  }
+  70% { 
+    box-shadow: 0 0 0 10px rgba(6, 78, 59, 0); 
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(6, 78, 59, 0); 
+  }
+}
+
+/* Modal de Privacidad */
+#privacy-modal .privacy-content,
+#privacy-modal .privacy-content * {
+  color: #000 !important;
+}
