@@ -3,6 +3,51 @@
    Isabela Owl - Mundo Holístico USA
    ======================================== */
 
+/* Clases de Color Personalizadas */
+.text-primary {
+  color: #1e1b4b !important;
+}
+
+.text-primary\/80 {
+  color: rgba(30, 27, 75, 0.8) !important;
+}
+
+.text-primary\/60 {
+  color: rgba(30, 27, 75, 0.6) !important;
+}
+
+.bg-primary {
+  background-color: #1e1b4b !important;
+}
+
+.text-accent {
+  color: #d97706 !important;
+}
+
+.bg-accent {
+  background-color: #d97706 !important;
+}
+
+.bg-accent\/20 {
+  background-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+.text-contrast {
+  color: #064e3b !important;
+}
+
+.bg-contrast {
+  background-color: #064e3b !important;
+}
+
+.hover\:text-accent:hover {
+  color: #d97706 !important;
+}
+
+.hover\:bg-contrast:hover {
+  background-color: #064e3b !important;
+}
+
 /* Fuentes y Colores Base */
 body {
   font-family: 'Montserrat', sans-serif;
